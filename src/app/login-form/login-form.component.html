@@ -1,0 +1,28 @@
+<div id="login">
+  <h1>Welcome Back!</h1>
+
+  <form [formGroup]="loginForm">
+
+    <div class="field-wrap" appHighlightLabel>
+      <label>
+        Email Address<span class="req">*</span>
+      </label>
+      <input formControlName="email" type="email"required autocomplete="off"/>
+      <span class="errorText" *ngIf="loginForm.controls.email.invalid&&loginForm.controls.email.dirty">Incorrect email</span>
+    </div>
+
+    <div class="field-wrap" appHighlightLabel>
+      <label>
+        Password<span class="req">*</span>
+      </label>
+      <input formControlName="password" type="password"required autocomplete="off"/>
+      <span class="errorText" *ngIf="loginForm.controls.password.invalid&&loginForm.controls.password.dirty">Incorrect password</span>
+    </div>
+
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+    <button [disabled]='loginForm.invalid' class="button button-block">Log In</button>
+
+  </form>
+
+</div>

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sign-up-login-form';
+  public activeTab: boolean = true;
+
+  switchForm(event): void {
+    event.preventDefault();
+    this.activeTab = !this.activeTab;
+  }
 }

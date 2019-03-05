@@ -1,0 +1,44 @@
+<div id="signup">
+  <h1>Sign Up for Free</h1>
+
+  <form [formGroup]="signUpForm">
+
+    <div class="top-row">
+      <div class="field-wrap" appHighlightLabel>
+        <label>
+          First Name<span class="req">*</span>
+        </label>
+        <input formControlName="name" type="text" required autocomplete="off" />
+        <span class="errorText" *ngIf="signUpForm.controls.name.invalid&&signUpForm.controls.name.dirty">Incorrect name</span>
+      </div>
+
+      <div class="field-wrap" appHighlightLabel>
+        <label>
+          Last Name<span class="req">*</span>
+        </label>
+        <input formControlName="surname" type="text"required autocomplete="off"/>
+        <span class="errorText" *ngIf="signUpForm.controls.surname.invalid&&signUpForm.controls.surname.dirty">Incorrect surname</span>
+      </div>
+    </div>
+
+    <div class="field-wrap" appHighlightLabel>
+      <label>
+        Email Address<span class="req">*</span>
+      </label>
+      <input formControlName="email" type="email"required autocomplete="off"/>
+      <span class="errorText" *ngIf="signUpForm.controls.email.invalid&&signUpForm.controls.email.dirty">Incorrect email</span>
+    </div>
+
+    <div class="field-wrap" appHighlightLabel>
+      <label>
+        Set A Password<span class="req">*</span>
+      </label>
+      <input formControlName="password" type="password"required autocomplete="off"/>
+      <span class="errorText" *ngIf="signUpForm.controls.password.invalid&&signUpForm.controls.password.dirty">Incorrect password</span>
+    </div>
+
+    <button [disabled]='signUpForm.invalid' type="submit" class="button button-block">Get Started</button>
+
+  </form>
+
+</div>
